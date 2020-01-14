@@ -9,7 +9,9 @@ $displayThirdColumn = $blocks > 0 || $c->isEditMode();
 
 <header>
     <div class="topbar">
-      <div><i class="fa fa-phone"></i><a href="tel:8454348300">(845) 434-8300</a></div>
+      <div>
+        <cite>Limited Space for 2020 - Sign Up Today!</cite>
+        <i class="fa fa-phone"></i><a href="tel:8454348300">(845) 434-8300</a></div>
       <div>
         <div class="social">
           <a href="/"><i class="fa fa-instagram"></i></a>
@@ -32,21 +34,8 @@ $displayThirdColumn = $blocks > 0 || $c->isEditMode();
         <p>MENU</p>
      </div>
      <div class="logo">
-       <a href="/"><img src="<?php echo $this->getThemePath(); ?>/images/nh-logo-blue.png" alt="New Hope Logo"></a>
+       <a href="/"><img src="<?php echo $this->getThemePath(); ?>/images/icons/CASV-logo-invt.svg" alt="Cooperstown All Star Village Logo"></a>
      </div>
-    <!--<ul class="nav">
-      <li class="">
-        <a href="/our-services" target="_self" class="">Our Services</a>
-        
-      </li>
-      <li class="">
-        <a href="/who-we-are" target="_self" class="">Who We Are</a>
-         <div class="submenu"><a href="/our-services/our-process">Our Process</a></div>
-      </li>
-      <li class="">
-        <a href="/support-us" target="_self" class="">Support Us</a>
-      </li>
-        </ul> -->
         <?php   
                     $bt = BlockType::getByHandle('autonav');
                     $bt->controller->displayPages = 'top'; // 'top', 'above', 'below', 'second_level', 'third_level', 'custom', 'current'

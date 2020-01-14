@@ -2,6 +2,6 @@
 
 <?php $this->inc('elements/header.php'); ?>
 
- <h1>Home Page</h1>
+<div class="main-banner"></div>
 
 <?php require('elements/footer.php'); ?>

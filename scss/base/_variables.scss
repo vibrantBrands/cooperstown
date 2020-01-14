@@ -1,18 +1,48 @@
+
+
 // Fonts
-$baseFont: 'Source Sans Pro', sans-serif;
-$secondaryFont: 'Cormorant Upright', serif;
-$font-stack-system: 'Source Sans Pro', sans-serif;
+$base-font: 'Roboto Condensed', sans-serif;
+$secondary-font: 'Open Sans Condensed', serif;
+$font-stack-system: 'Roboto Condensed', sans-serif;
 
-// Colors
-$brandPrimary: #2700af; // Dark Blue
-$brandSecondary: #b39b11; // Gold
-$brandTertiary: #dbae1d; // Yellow
-$btnColor: #326296;
+// Colors 
 
-// Text Selection
-$selectionColor: $brandPrimary;
-$selectionTextColor: #fff;
+$black: #000;
+$white: #fff;
+$nh-gray: #a0a0a0;
+$nav-color: #edf6ff;
 
-// Links
-$linkColor: $brandPrimary;
-$linkHoverColor: $brandSecondary;
+$casv-red: #ba1f24;
+$casv-grey: #4d4d4f;
+$hover-color: lighten($casv-red, 10%);
+
+// Menu 
+
+$menu-transition: all .3s ease-out;
+
+// Breakpoints
+
+$sm-breakpoint: 576px;
+$md-breakpoint: 768px;
+$lg-breakpoint: 992px;
+$xl-breakpoint: 1200px;
+
+// Sizes 
+
+$content-max-width: 1200px;
+
+$topbar-height: 50px;
+$topbar-mobile-height: 90px;
+
+$h1-text-size: 24px;
+$h2-text-size: 20px;
+$h3-text-size: 26px;
+$text-size: 18px;
+$text-line-height: 34px;
+$timeline-font-size: 20px;
+$timeline-header-size: 35px;
+
+// Margins
+
+$header-top-margin: 70px;
+$h2-top-margin: 30px;

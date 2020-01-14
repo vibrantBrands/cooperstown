@@ -8,7 +8,26 @@
    transform: translateY(-50%);
 }
 
+@mixin flex-column-layout($breakpoint: $lg-breakpoint) {
 
+   @media only screen and (max-width: $breakpoint) {
+        flex-direction: column;
+    }
+}
+
+@mixin mobile-bottom-margin($breakpoint, $amount) {
+
+   @media only screen and (max-width: $breakpoint) {
+        margin-bottom: $amount;
+    }
+}
+
+@mixin hide-mobile($breakpoint) {
+
+   @media only screen and (max-width: $breakpoint) {
+        display: none;
+    }
+}
 
 /* SCSS -- retina ready images */
 @mixin retina-image($image, $width, $height) {
@@ -29,4 +48,22 @@
    right: $right;
    bottom: $bottom;
    left: $left;
+}
+
+// Easier method of centering
+// Don't use directly on SVGs because it makes them break in some browsers
+@mixin translate-center() {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin translate-y-center() {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin translate-x-center() {
+    left: 50%;
+    transform: translateX(-50%);
 }

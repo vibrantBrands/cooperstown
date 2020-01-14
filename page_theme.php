@@ -1,5 +1,5 @@
 <?php
-namespace Application\Theme\Casv;
+namespace Application\Theme\Cooperstown;
 
 use Concrete\Core\Area\Layout\Preset\Provider\ThemeProviderInterface;
 use Concrete\Core\Page\Theme\Theme;

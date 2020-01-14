@@ -4,6 +4,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" type="text/css" href="<?php echo $view->getThemePath()?>/css/bootstrap-modified.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $view->getThemePath()?>/_css/style.css">
     <?php echo $html->css($view->getStylesheet('main.less')) ?>
     <?php
     View::element('header_required', [
@@ -12,7 +13,7 @@
         'pageMetaKeywords' => isset($pageMetaKeywords) ? $pageMetaKeywords : ''
     ]);
     ?>
-     <?php
+    <?php
         $this->inc('app/page_settings.php');
         $po = new PageOptions();
     ?>
@@ -32,3 +33,4 @@
 <body class="<?php if ($po->isHome()) { echo "home_wrapper"; } else {echo "internal_wrapper"; }  ?>">
 
 <div class="<?php echo $c->getPageWrapperClass()?>">
+
