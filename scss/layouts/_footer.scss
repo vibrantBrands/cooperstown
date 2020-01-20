@@ -1,0 +1,69 @@
+footer {
+	align-items: center;
+	background: $casv-footer-bg;
+	display: flex;
+	justify-content: space-between;
+	padding: 50px;
+	position: relative;
+
+	@include flex-column-layout($md-breakpoint);
+
+	@media only screen and (max-width: $md-breakpoint) {
+			align-items: flex-end;
+			justify-content: flex-start;
+			min-height: 400px;
+			padding: 20px;
+		}
+
+	.logo {
+		align-self: flex-start;
+		width: 250px;
+
+		@media only screen and (max-width: $md-breakpoint) {
+			//position: absolute;
+			left: 0;
+			top: -30px;
+			//width: 200px;
+		}
+	}
+
+	>div {
+		align-items: center;
+		//border: 1px solid $white;
+		display: flex;
+
+		@media only screen and (max-width: $md-breakpoint) {
+			width: 100%;
+			justify-content: center;
+			padding-top: 20px;
+		}
+	}
+
+	p, a {
+		color: $white;
+	}
+
+	.phone {
+		font-family: "Roboto", sans-serif;
+		font-size: 1.8em;
+		font-style: italic;
+		font-weight: 900;
+		justify-content: space-around;
+		width: 40%;
+
+		@media only screen and (max-width: $md-breakpoint) {
+			flex-direction: column;
+			justify-content: center;
+			width: 100%;
+
+			span {
+				margin-top: 20px;
+			}
+		}
+
+		i {
+			color: $white;
+			margin-left: 10px;
+		}
+	}
+}

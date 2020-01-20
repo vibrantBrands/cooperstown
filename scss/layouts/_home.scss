@@ -1,9 +1,399 @@
 .home_wrapper {
+	//text-align: center;
+
+	.container {
+		text-align: left;
+	}
 
 	.main-banner {
-		background: pink;
-		margin-top: 200px;
+		background: url("../images/Hero.jpg") no-repeat;
+		background-size: cover;
+		background-position: 0 -150px;
+		margin-top: 90px;
 		width: 100%;
-		height: 400px;
+		height: 450px;
+
+		@media only screen and (max-width: $lg-breakpoint) {
+			background-position: 0 50px;
+			margin-top: 50px;
+		}
+		@media only screen and (max-width: $sm-breakpoint) {
+			background-position: -100px 50px;
+		}
+	}
+
+	.subnav {
+		align-items: center;
+		background: $casv-black;
+		color: $white;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		
+		p {
+			color: $white;
+		}
+
+		img {
+			width: 75px;
+		}
+
+		a {
+			color: $white;
+			text-decoration: none;
+		}
+
+		.vid-indicator {
+			margin-right: 5px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: static;
+
+			@keyframes pulse {
+				0% {
+				    transform: scale(0, 0);
+					}
+
+				50% {
+					transform: scale(1.5, 1.5);
+					}
+
+				 100% {
+				    transform: scale(0, 0);
+					}
+				}
+
+			.dot {
+				background: $casv-red;
+				border-radius: 15px;
+				display: block;
+				height: 15px;
+				position: absolute;
+				width: 15px;
+			}
+
+			.pulse {
+				animation: pulse 3s infinite;
+				background: $casv-red;
+				border-radius: 26px;
+				opacity: .3;
+				display: block;
+				position: absolute;
+				height: 26px;
+				width: 26px;
+			}
+		}
+
+		>div {
+			align-items: center;
+			display: flex;
+			
+			@media only screen and (max-width: $md-breakpoint) {
+				padding: 5px 0;
+			}
+
+			p {
+				margin: 0 0 0 20px;
+			}
+
+			span {
+				margin-left: 5px;
+			}
+		}
+	}
+
+	// picture links section, Lodging, Entertainment, etc. 
+
+	.pic-links {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		margin-bottom: 20px;
+
+		>a {
+			display: flex;
+			height: 200px;
+			text-decoration: none;
+			width: 25%;
+
+			@media only screen and (max-width: $md-breakpoint) {
+				margin-top: 20px;
+				width: 45%;
+			}
+
+			&:hover {
+				span {
+					transform: scale(1.2, 1.2) translate(0px,-3px);
+					transition: all .4s ease-out;
+				}
+			}
+
+			>div {
+				align-items: center;
+				background: $casv-red;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+				width: 100%;
+
+				>span {
+					background: $casv-red;
+					border-top-left-radius: 10px;
+					border-top-right-radius: 10px;
+					color: $white;
+					display: block;
+					padding: 10px 20px;
+				}
+			}
+		}
+	}
+
+	// compete against the best section
+
+	.compete .container {
+		display: flex;
+		justify-content: space-between;
+
+		@include flex-column-layout($md-breakpoint, column-reverse);
+
+		.description {
+			width: 55%;
+
+			@include mobile-full-width();
+		}
+
+		>div {
+			padding: 30px;
+		}
+
+		.video-brochure {
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+			width: 45%;
+
+			@media only screen and (max-width: $md-breakpoint) {
+				flex-direction: row;
+				justify-content: space-between;
+			}
+
+		    @include mobile-full-width($md-breakpoint);
+
+			>div {
+				cursor: pointer;
+				display: flex;
+				height: 160px;
+				margin-bottom: 20px;
+				position: relative;
+				width: 90%;
+
+				@include mobile-full-width($md-breakpoint, 48%);
+
+				&:hover {
+
+					span {
+						transform: scale(1.2, 1.2) translate(0px,-3px);
+						transition: all .4s ease-out;
+					}
+				}
+
+				span {
+					background: $casv-blue;
+					color: $white;
+					font-weight: bold;
+					display: block;
+					padding: 8px 20px;
+					position: absolute;
+					top: 15px;
+					left: -6px;
+				}
+
+				&:first-child {
+					background: url('../images/Video-tour.png');
+					background-size: cover;
+					background-position: center;
+				}
+
+				&:nth-child(2) {
+					background: url('../images/Digital-brochure.png');
+					background-size: cover;
+					background-position: center;
+				}
+			}
+		}
+	}
+
+	.why-casv {
+		background: url('../images/Why-Coop-BG.png') no-repeat;
+		background-size: cover;
+		background-position: center;
+		padding-bottom: 60px;
+
+		h2 {
+			background: $casv-red;
+			border-bottom-left-radius: 10px;
+			border-bottom-right-radius: 10px;
+			color: $white;
+			display: inline-block;
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 50px;
+			padding: 10px 20px;
+			position: absolute;
+
+			@include translate-x-center(); 
+		}
+
+		.container {
+			display: flex;
+			padding-top: 80px;
+
+			@include flex-column-layout();
+
+			img {
+				width: 80px;
+			}
+
+			>div {
+				
+				>ul {
+
+					>li {
+						align-items: center;
+						display: flex;
+						padding: 20px;
+						text-align: left;
+
+						img {
+							margin-right: 20px;
+						}
+
+						p {
+							color: $white;
+						}
+					}
+				}
+			}
+
+		}
+	}
+
+	.social-section {
+		background: url('../images/Social-Media-BG.png');
+		background-size: cover;
+		color: $white;
+
+		.fb-link {
+			align-items: center;
+			background: $casv-lt-blue;
+			display: flex;
+			justify-content: space-around;
+			height: 40px;
+			width: 100%;
+
+			a {
+				color: $white;
+			}
+
+			i {
+				margin-right: 8px;
+			}
+		}
+
+		.facebook-box {
+			background: $white;
+			margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			padding: 30px;
+			position: relative;
+
+			p {
+				padding-left: 100px;
+
+				@media only screen and (max-width: $md-breakpoint) {
+					padding-left: 0;
+				}
+			}
+
+			.logo {
+				background: $white;
+				border-radius: 100px;
+				border: 8px solid #ccc;
+				left: -80px;
+				padding: 10px;
+				position: absolute;
+				width: 200px;
+
+				@media only screen and (max-width: $md-breakpoint) {
+					display: none;
+				}
+			}
+		}
+
+		.container {
+			display: flex;
+			justify-content: space-around;
+			height: 600px;
+
+			@media only screen and (max-width: $md-breakpoint) {
+				align-items: center;
+			}
+
+			@include flex-column-layout($md-breakpoint);
+
+			>div {
+				width: 45%;
+
+				@include mobile-full-width($md-breakpoint, 90%);
+			}
+		}
+
+		h2 {
+			font-size: 2.5em;
+			font-weight: bold;
+			margin-top: 60px;
+			text-align: center;
+			text-transform: uppercase;
+		}
+	}
+
+	.testimonials {
+		display: flex;
+
+		@include flex-column-layout($md-breakpoint);
+
+		>div {
+			width: 50%;
+
+			@include mobile-full-width($md-breakpoint, 100%);
+
+		}
+		
+		.ccm-image-slider-title {
+			font-size: 2em;
+			font-weight: bold;
+			text-align: center;
+			color: $casv-red;
+
+			@media only screen and (max-width: $md-breakpoint) {
+				font-size: 1.2em;
+			}
+		}
+
+		.ccm-image-slider-text {
+			width: 100%;
+			padding: 0px 60px;
+
+			@media only screen and (max-width: $md-breakpoint) {
+				padding: 0;
+				font-size: 1em;
+			}
+
+			strong {
+				color: $casv-blue;
+			}
+		}
 	}
 }

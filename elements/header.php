@@ -11,30 +11,32 @@ $displayThirdColumn = $blocks > 0 || $c->isEditMode();
     <div class="topbar">
       <div>
         <cite>Limited Space for 2020 - Sign Up Today!</cite>
-        <i class="fa fa-phone"></i><a href="tel:8454348300">(845) 434-8300</a></div>
+          <div>
+            <i class="far fa-phone"></i><a href="tel:8454348300">(845) 434-8300</a>
+          </div>
+        </div>
       <div>
         <div class="social">
-          <a href="/"><i class="fa fa-instagram"></i></a>
-          <a href="/"><i class="fa fa-linkedin"></i></a>
+          <a href="/">Contact Us</a>
+          <a href="/">FAQs</a>
           <a href="/"><i class="fa fa-facebook"></i></a>
           <a href="/"><i class="fa fa-youtube"></i></a>
-          <a href="/"><i class="fa fa-twitter"></i></a>
         </div>
-        <a class="solid-btn" href="/support-us/donation">DONATE</a>
       </div>
     </div>
     <div class="navigation">
       <div class="toggle-wrapper">
+        <p>MENU</p>
         <div class="menu-toggle inactive">
           <div class="bar"></div>
           <div class="bar"></div>
           <div class="bar"></div>
           <span class="bg"></span>
         </div>
-        <p>MENU</p>
      </div>
      <div class="logo">
-       <a href="/"><img src="<?php echo $this->getThemePath(); ?>/images/icons/CASV-logo-invt.svg" alt="Cooperstown All Star Village Logo"></a>
+       <a href="/" class="desktop"><img src="<?php echo $this->getThemePath(); ?>/images/icons/CASV-logo-invt.svg" alt="Cooperstown All Star Village Logo"></a>
+       <a href="/" class="mobile"><img src="<?php echo $this->getThemePath(); ?>/images/icons/CASV-logo-color.svg" alt="Cooperstown All Star Village Logo"></a>
      </div>
         <?php   
                     $bt = BlockType::getByHandle('autonav');

@@ -8,10 +8,10 @@
    transform: translateY(-50%);
 }
 
-@mixin flex-column-layout($breakpoint: $lg-breakpoint) {
+@mixin flex-column-layout($breakpoint: $lg-breakpoint, $direction: column) {
 
    @media only screen and (max-width: $breakpoint) {
-        flex-direction: column;
+        flex-direction: $direction;
     }
 }
 
@@ -66,4 +66,13 @@
 @mixin translate-x-center() {
     left: 50%;
     transform: translateX(-50%);
+}
+
+/* SCSS -- Change item width at a certain breakpoint for moblie layout. Default to 100% at   */
+
+@mixin mobile-full-width($breakpoint: $lg-breakpoint, $percentage: 100%) {
+  
+  @media screen and (max-width: $breakpoint){
+      width: $percentage;
+    }
 }

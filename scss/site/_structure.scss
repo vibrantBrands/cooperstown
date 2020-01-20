@@ -1,4 +1,9 @@
 /* HEADER */
+
+* {
+	font-family: 'Roboto', sans-serif;
+}
+
 header { 
   height: 10%;
   min-height: 100px;
@@ -11,4 +16,27 @@ header {
 
 a {
 	color: $casv-red;
+}
+
+h3 {
+	font-weight: bold;
+	font-style: italic;
+	margin: 0 0 6px 0;
+	color: $casv-blue;
+}
+
+h4 {
+	font-weight: bold;
+	color: $casv-red;
+}
+
+p {
+	font-size: 18px;
+	line-height: 28px;
+	color: $casv-text-color;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 1200px;
 }

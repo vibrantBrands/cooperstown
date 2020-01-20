@@ -1,7 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Cormorant+Upright:400,700|Source+Sans+Pro:400,700&display=swap');
-@import '../plugins/fontawesome/fontawesome.scss';
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900i&display=swap');
 @import '../plugins/fontawesome/fa-regular.scss';
-@import "../plugins/fontawesome/fa-brands.scss";
+@import '../plugins/fontawesome/fa-brands.scss';
+@import '../plugins/fontawesome/fa-solid.scss';
+@import '../plugins/fontawesome/fa-light.scss';
+@import '../plugins/fontawesome/fontawesome.scss';
+@import '../plugins/aos/aos.scss';
 @import '../plugins/bourbon/bourbon';
 @import '../plugins/base/base';
 @import '../plugins/neat/neat';

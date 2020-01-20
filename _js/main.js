@@ -7,4 +7,9 @@ $( document ).ready(function() {
 		$('.nav').toggleClass('inactive');
 	});
 
+	AOS.init({
+		duration: 1000,
+		easing: 'ease-out'
+	});
+
 });

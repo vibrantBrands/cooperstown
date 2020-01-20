@@ -9,62 +9,16 @@ $footerSocialBlocks = $footerSocial->getTotalBlocksInArea();
 $displayFirstSection = $footerSiteTitleBlocks > 0 || $footerSocialBlocks > 0 || $c->isEditMode();
 ?>
 
-<footer id="footer-theme">
-    <?php
-    if ($displayFirstSection) {
-        ?>
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-9">
-                        <?php
-                        $a = new GlobalArea('Footer Site Title');
-                        $a->display();
-                        ?>
-                    </div>
-                    <div class="col-sm-3">
-                        <?php
-                        $a = new GlobalArea('Footer Social');
-                        $a->display();
-                        ?>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <?php
-    }
-    ?>
-
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <?php
-                    $a = new GlobalArea('Footer Legal');
-                    $a->display();
-                    ?>
-                </div>
-                <div class="col-sm-3">
-                    <?php
-                    $a = new GlobalArea('Footer Navigation');
-                    $a->display();
-                    ?>
-                </div>
-                <div class="col-sm-3">
-                    <?php
-                    $a = new GlobalArea('Footer Contact');
-                    $a->display();
-                    ?>
-                </div>
-            </div>
+<footer>
+        <div>
+            <a href="/"><img class="logo" src="<?php echo $this->getThemePath(); ?>/images/icons/CASV-logo-invt.svg" alt="Cooperstown All Star Village Logo"></a>
+            <p>Cooperstown All Star Village <br />P.O. Box 670, Cooperstown, NY 13326</p>
         </div>
-    </section>
-</footer>
-
-<footer id="concrete5-brand">
-    <div class="container">
-        
-    </div>
+        <div class="phone">
+            <span><i class="far fa-phone"></i><a href="tel:8003276790">(800) 327-6790</a></span>
+            <span><a href="/"><i class="fa fa-facebook"></i></a>
+            <a href="/"><i class="fa fa-youtube"></i></a></span>
+        </div>  
 </footer>
 
 <?php $this->inc('elements/footer_bottom.php');?>

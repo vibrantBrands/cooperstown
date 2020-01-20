@@ -4,6 +4,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" type="text/css" href="<?php echo $view->getThemePath()?>/css/bootstrap-modified.css">
+     <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
     <link rel="stylesheet" type="text/css" href="<?php echo $view->getThemePath()?>/_css/style.css">
     <?php echo $html->css($view->getStylesheet('main.less')) ?>
     <?php
@@ -30,7 +31,7 @@
         }
     </script>
 </head>
-<body class="<?php if ($po->isHome()) { echo "home_wrapper"; } else {echo "internal_wrapper"; }  ?>">
+<body class="casv <?php if ($po->isHome()) { echo "home_wrapper"; } else {echo "internal_wrapper"; }  ?>" data-aos-easing="ease-out" data-aos-duration="1000" data-aos-delay="0">
 
 <div class="<?php echo $c->getPageWrapperClass()?>">
 
