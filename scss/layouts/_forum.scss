@@ -1,0 +1,35 @@
+.ab-forum-post-list {
+
+	.ab-forum-main-search {
+
+		.topic-icons {
+
+			.row {
+				display: flex;
+
+				.col-lg-1 {
+					margin: 0 15px;
+
+					.topic-icon-text {
+						color: $casv-red;
+						font-size: 12px;
+						text-decoration: none;
+						text-transform: uppercase;
+					}
+				}
+			}
+		}
+	}
+
+	.fa-chevron-right {
+		font-size: 16px !important;
+	}
+}
+
+.ab-forum-post-message-actions {
+		.tooltip {
+			margin-top: -5px !important;
+			padding: 0 3px !important;
+			position: absolute !important;
+		}
+	}

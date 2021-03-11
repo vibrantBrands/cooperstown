@@ -91,7 +91,8 @@ class PageTheme extends Theme implements ThemeProviderInterface
     public function getThemeEditorClasses()
     {
         return [
-            ['title' => t('Blue Button'), 'menuClass' => '', 'spanClass' => 'blue-button', 'forceBlock' => '-1'],
+            ['title' => t('Blue Button'), 'menuClass' => '', 'spanClass' => 'blue button', 'forceBlock' => '1'],
+            ['title' => t('Red Button'), 'menuClass' => '', 'spanClass' => 'red button', 'forceBlock' => '1'],
         ];
     }
 

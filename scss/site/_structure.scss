@@ -1,42 +1,486 @@
 /* HEADER */
 
-* {
-	font-family: 'Roboto', sans-serif;
-}
+.casv {
 
-header { 
-  height: 10%;
-  min-height: 100px;
-  width: 100%;
-  padding-bottom: 8%;
-  clear: both;
-  background-color: white;
-  position: relative;
-}
+    * {
+        font-family: 'Roboto', sans-serif;
+    }
 
-a {
-	color: $casv-red;
-}
+    .header {
+        height: 80px;
+        min-height: 100px;
+        width: 100%;
+        padding-bottom: 8%;
+        clear: both;
+        background-color: white;
+        position: relative;
+    }
 
-h3 {
-	font-weight: bold;
-	font-style: italic;
-	margin: 0 0 6px 0;
-	color: $casv-blue;
-}
+    a {
+        color: $casv-red;
+    }
 
-h4 {
-	font-weight: bold;
-	color: $casv-red;
-}
+    h2 {
+        color: $casv-blue;
+    }
 
-p {
-	font-size: 18px;
-	line-height: 28px;
-	color: $casv-text-color;
-}
+    h3 {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 20px 0 15px 0;
+        color: $casv-blue;
+    }
 
-.container {
-	margin: 0 auto;
-	max-width: 1200px;
+    h4 {
+        font-weight: bold;
+        color: $casv-red;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 22px;
+        color: $casv-text-color;
+    }
+
+    .two-col {
+        display: flex;
+        margin: 50px auto;
+
+        @include flex-column-layout();
+
+        >div {
+            align-text: center;
+            width: 50%;
+
+            @include mobile-full-width();
+        }
+    }
+
+    .container {
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 2%;
+    }
+
+    .img-link {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+        @media only screen and (max-width: $md-breakpoint) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        @include mobile-full-width($md-breakpoint);
+
+        >div {
+            cursor: pointer;
+            max-height: 180px;
+            margin-bottom: 20px;
+            position: relative;
+            width: 90%;
+
+            @media only screen and (max-width: $lg-breakpoint) {
+                height: auto;
+                max-height: 400px;
+            }
+
+            @media only screen and (max-width: $lg-breakpoint) {
+                width: 48%;
+            }
+
+            //@include mobile-full-width($md-breakpoint, 48%);
+
+            .img-box {
+                overflow: hidden;
+                position: relative;
+                max-height: 180px;
+
+                @media only screen and (max-width: $lg-breakpoint) {
+                    height: auto;
+                    max-height: 400px;
+                }
+
+
+                img {
+                    image-rendering: -moz-crisp-edges;
+                    image-rendering: -moz-crisp-edges;
+                    image-rendering: -o-crisp-edges;
+                    image-rendering: -webkit-optimize-contrast;
+                    -ms-interpolation-mode: nearest-neighbor;
+                }
+            }
+
+            span {
+                background: $casv-blue;
+                color: $white;
+                font-weight: bold;
+                display: block;
+                padding: 8px 20px;
+                position: absolute;
+                top: 15px;
+                left: -6px;
+                z-index: 2;
+
+                @media only screen and (max-width: $lg-breakpoint) {
+                    top: auto;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .tabbed-content {
+
+        .tabs {
+            cursor: pointer;
+
+            >div {
+                display: inline-block;
+                background: $casv-red;
+                color: $white;
+                padding: 5px 20px;
+                border-radius: 10px 10px 0% 0%;
+
+                &.active {
+                    background: $casv-blue;
+                }
+            }
+        }
+
+        .family-content,
+        .team-content,
+        .umpire-content {
+            border: 1px solid $casv-red;
+            padding: 20px;
+        }
+
+        .family-content,
+        .umpire-content {
+            display: none;
+        }
+    }
+
+
+    // picture links section, Lodging, Entertainment, etc. 
+
+    .pic-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-bottom: 20px;
+
+        >a {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            height: 210px;
+            position: relative;
+            text-decoration: none;
+            overflow: hidden;
+            width: 25%;
+
+            @media only screen and (max-width: $lg-breakpoint) {
+                width: 50%;
+            }
+
+            * {
+                position: absolute;
+            }
+
+            @media only screen and (max-width: $xl-breakpoint) {
+                height: 160px;
+                align-items: center;
+            }
+
+            @media only screen and (max-width: $lg-breakpoint) {
+                margin-top: 20px;
+                width: 46%;
+            }
+
+            @media only screen and (max-width: $md-breakpoint) {
+                height: 130px;
+            }
+
+            &:hover {
+
+                span {
+                    transform: scale(1.2, 1.2) translate(0px, -3px);
+                    transition: all .4s ease-out;
+                }
+
+                >img {
+                    transform: scale(1.2, 1.2);
+                    transition: all .4s ease-out;
+                }
+            }
+
+            >img {
+                width: 100%;
+                height: auto;
+                image-rendering: -moz-crisp-edges;
+                image-rendering: -moz-crisp-edges;
+                image-rendering: -o-crisp-edges;
+                image-rendering: -webkit-optimize-contrast;
+                -ms-interpolation-mode: nearest-neighbor;
+            }
+
+            >span {
+                align-self: flex-end;
+                background: $casv-red;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                color: $white;
+                display: block;
+                padding: 10px 20px;
+
+                @media only screen and (max-width: $lg-breakpoint) {
+                    border-radius: 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    a.button,
+    p.button {
+        background: $casv-blue;
+        border-radius: 8px;
+        color: $white;
+        cursor: pointer;
+        display: inline-table;
+        margin: 10px 0;
+        padding: 10px;
+        text-decoration: none;
+        transition: background 0.3s ease-out;
+
+        a {
+           background: $casv-blue;
+            border-radius: 8px;
+            color: $white;
+            display: inline-block;
+            text-decoration: none;
+            transition: background 0.3s ease-out;
+        }
+
+        &.red {
+            background: $casv-red;
+
+            &:hover {
+                background: $casv-blue;
+            }
+
+            a {
+               background: $casv-red;
+
+                &:hover {
+                    background: $casv-blue;
+                } 
+            }
+        }
+
+        &:hover {
+            background: $casv-red;
+
+            a {
+                background: $casv-red; 
+            }
+        }
+    }
+
+// BTS popup code
+
+    .bts-popup {
+      position: fixed;
+      left: 0;
+      top: 0px;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(248, 248, 248, 0.7);
+      opacity: 0;
+      visibility: hidden;
+      -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+      -moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+      transition: opacity 0.3s 0s, visibility 0s 0.3s;
+        }
+        .bts-popup.is-visible {
+          opacity: 1;
+          visibility: visible;
+          width: 100%;
+          max-width: 1920px;
+          z-index: 999;
+          -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;
+          -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
+          transition: opacity 0.3s 0s, visibility 0s 0s;
+        }
+        .bts-popup-container {
+            padding:0 2.5%;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          position: relative;
+          width: 45%;
+          height: 55%;
+          min-height: 575px;
+          max-height: 600px;
+          max-width: 1000px;
+          margin: 4em auto;
+          background: rgb(7,47,75);
+          background-image: url('https://cooperstownallstarvillage.com/application/files/4316/0936/0524/CASV_popup-BG_chs123020.png');
+          background-position: center top;
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          text-align: center;
+          box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+          -webkit-transform: translateY(-40px);
+          -moz-transform: translateY(-40px);
+          -ms-transform: translateY(-40px);
+          -o-transform: translateY(-40px);
+          transform: translateY(-40px);
+          /* Force Hardware Acceleration in WebKit */
+          -webkit-backface-visibility: hidden;
+          -webkit-transition-property: -webkit-transform;
+          -moz-transition-property: -moz-transform;
+          transition-property: transform;
+          -webkit-transition-duration: 0.3s;
+          -moz-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+        }
+        .popupContent {
+          
+          text-align:left;
+        }
+        .popupContent  h1 {
+            color:#fff;
+            font-size:2.25em;
+            font-weight:bold;
+        }
+        .popupContent  h1 span{
+            font-size:.8em;
+        }
+        .popupContent a{
+            border:1px solid #fff;
+            padding:15px 30px;
+        }
+        @media screen and (max-width: 1280px) {
+            .bts-popup-container {
+            }
+            .popupContent p {
+                font-size: 22px !important;
+            }
+            #popupBtnOne {font-size: 14px !important;}
+            #popupBtnTwo {font-size: 14px !important;}
+        }
+        @media screen and (max-width: 1095px) {
+            .bts-popup-container {
+            width: 70%;
+            min-height: 400px;
+            }
+            .popupContent {
+                width: 90%;
+            }
+        }
+        @media screen and (max-width: 637px) {
+            .popupContent {
+                border-bottom: none;
+            }
+            .bts-popup-container {
+            width: 85%;
+            height: 425px;
+            }
+        }
+        .bts-popup-container p {
+            color: white;
+          font-size: 22px;
+          line-height:27px;
+          padding: 10px 40px;
+        }
+        .bts-popup-container .bts-popup-button {
+          padding: 5px 25px;
+          border: 2px solid white;
+            display: inline-block;
+          margin-bottom: 10px;
+        }
+        .bts-popup-container a {
+          color: white;
+          text-decoration: none;
+          text-transform: uppercase;
+        }
+        #btnGroup {
+          width: 100%;
+          padding-bottom: 60px;
+        }
+        #popupBtnOne {
+          background: #1aaaab;
+          width: 35%;
+          float: left;
+          margin-left: 10%;
+          font-size: 16px;
+          color: white;
+          font-weight: 700;
+          padding: 8px 25px;
+          border: 1px solid #1aaaab;
+          /*border-radius: 10px;*/
+        }
+        #popupBtnTwo {
+          background: none;
+          width: 35%;
+          float: right;
+          margin-right: 10%;
+          font-size: 16px;
+          color: white;
+          font-weight: 700;
+          padding: 8px 25px;
+          border: 1px solid white;
+          border-radius: 10px;
+        }
+        .bts-popup-container .bts-popup-close {
+          position: absolute;
+          top: 8px;
+          background: white;
+          border-radius: 18px;
+          right: 8px;
+          width: 30px;
+          height: 30px;
+        }
+        .bts-popup-container .bts-popup-close::before, .bts-popup-container .bts-popup-close::after {
+          content: '';
+          position: absolute;
+          top: 13px;
+          width: 20px;
+          height: 3px;
+          background-color: black;
+        }
+        .bts-popup-container .bts-popup-close::before {
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+          left: 6px;
+        }
+        .bts-popup-container .bts-popup-close::after {
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+          right: 5px;
+          top: 13px;
+        }
+        .is-visible .bts-popup-container {
+          -webkit-transform: translateY(0);
+          -moz-transform: translateY(0);
+          -ms-transform: translateY(0);
+          -o-transform: translateY(0);
+          transform: translateY(0);
+        }
+        @media only screen and (min-width: 1170px) {
+          .bts-popup-container {
+            margin: 3% auto;
+          }
+        }    
 }

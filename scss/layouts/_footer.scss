@@ -1,10 +1,89 @@
 footer {
-	align-items: center;
 	background: $casv-footer-bg;
-	display: flex;
-	justify-content: space-between;
-	padding: 50px;
-	position: relative;
+	padding-bottom: 50px;
+
+	.container {
+		display: flex;
+		justify-content: space-between;
+		padding: 0;
+		width: 100%;
+
+		@include flex-column-layout();
+	}
+
+	#footerAddress {
+		color: $white;
+
+		@media only screen and (max-width: $lg-breakpoint) {
+			text-align: center;
+		}
+	}
+
+	.site-links {
+		width: 100%;
+		text-align: center;
+
+		a {
+			color: $white;
+			font-size: 16px;
+			text-decoration: none;
+
+			&:hover {
+				color: yellow;
+			}
+		}
+
+		.nav {
+			display: flex;
+			flex-wrap: wrap;
+			font-size: .8em;
+			justify-content: flex-start;
+			margin: 0 auto;
+			text-align: left;
+			text-transform: uppercase;
+
+			@media only screen and (max-width: $lg-breakpoint) {
+				margin-top: 50px;
+				flex-direction: column;
+				text-align: center;
+			}
+
+			>.nav-item {
+				margin-right: 20px;
+			}
+
+			>li {
+				font-weight: bold;
+
+				@media only screen and (max-width: $lg-breakpoint) {
+					margin-bottom: 20px;
+				}
+			}
+
+			.submenu {
+				margin-top: 15px;
+
+				li {
+					font-weight: normal;
+					margin: 5px 0;
+				}
+			}
+		}
+
+		.ccm-block-page-list-pages {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+
+			>div {
+				margin: 5px 20px;
+			}
+
+			.ccm-block-page-list-title {
+				margin-bottom: 0;
+			}
+		}
+	}
 
 	@include flex-column-layout($md-breakpoint);
 
@@ -12,7 +91,7 @@ footer {
 			align-items: flex-end;
 			justify-content: flex-start;
 			min-height: 400px;
-			padding: 20px;
+			padding: 20px 20px 110px;
 		}
 
 	.logo {
@@ -20,17 +99,16 @@ footer {
 		width: 250px;
 
 		@media only screen and (max-width: $md-breakpoint) {
-			//position: absolute;
 			left: 0;
 			top: -30px;
-			//width: 200px;
 		}
 	}
 
 	>div {
 		align-items: center;
-		//border: 1px solid $white;
+		flex: 1 0 0;
 		display: flex;
+		width: 50%;
 
 		@media only screen and (max-width: $md-breakpoint) {
 			width: 100%;
@@ -39,31 +117,117 @@ footer {
 		}
 	}
 
-	p, a {
-		color: $white;
+	ul {
+		li {
+			margin-bottom: 10px;
+		}
 	}
 
 	.phone {
-		font-family: "Roboto", sans-serif;
-		font-size: 1.8em;
-		font-style: italic;
-		font-weight: 900;
-		justify-content: space-around;
-		width: 40%;
+		align-items: flex-start;
+		color: $white;
+		display: flex;
+		flex-direction: row;
+		font-size: 2em;
 
-		@media only screen and (max-width: $md-breakpoint) {
-			flex-direction: column;
-			justify-content: center;
-			width: 100%;
+		@include flex-column-layout();
 
-			span {
-				margin-top: 20px;
-			}
+		#phoneText {
+			margin-right: 20px;
+		}
+
+		h2 {
+			margin-top: 20px;
+			font-size: 24px;
+			color: $white;
+			//text-align: right;
+		}
+
+		p {
+			color: $white;
+			margin: 5px 0;
+		}
+
+		a {
+			color: $white;
+			text-decoration: none;
 		}
 
 		i {
 			color: $white;
-			margin-left: 10px;
+			margin-right: 8px;
+		}
+
+		img {
+			max-width: 130px;
+		}
+	}
+
+	.back-to-top {
+		background: $casv-red;
+		border: 1px solid $white;
+		bottom: 10px;
+		color: $white;
+		display: inline-block;
+		padding: 10px 20px;
+		position: fixed;
+		right: 10px;
+		width: auto;
+
+		&:hover {
+			transform: scale(1.1);
+			opacity: .8;
+			transition: .3s all ease-out;
+		}
+	}
+}
+
+.mobile-menu {
+	background: $casv-red;
+	bottom: 0;
+	color: $white;
+	display: flex;
+	padding: 10px;
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+
+	@media only screen and (min-width: $md-breakpoint) {
+		display: none;
+	}
+
+	@media only screen and (max-width: $sm-breakpoint) {
+		font-size: .6em;
+
+		span {
+			//display: none;
+		}
+	}
+
+	>a {
+		background: $mobile-menu-bg;
+		border: 1px solid $mobile-menu-bg;
+		color: $white;
+		cursor: pointer;
+		flex: 1 1 0;
+		margin: 0 5px;
+		text-decoration: none;
+		padding: 10px;
+
+		>div {
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+
+			img {
+				align-self: center;
+				margin-bottom: 5px;
+			}
+
+		}
+
+		&:hover {
+			border: 1px solid $white;
 		}
 	}
 }

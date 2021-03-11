@@ -1,6 +1,10 @@
 .internal_wrapper {
-	margin-top: 130px;
-	width: 100%;
+	//width: 100%;
+	line-height: 1.4em;
+
+	.ccm-page {
+		padding-top: 0px !important;
+	}
 
 	h1 {
 		text-transform: uppercase;
@@ -12,8 +16,15 @@
 	}
 
 	h2 {
-		margin-top: $h2-top-margin;
-		color: $nh-red;
+		color: $casv-red;
+		font-size: 1.5em;
+		font-weight: bold;
+		margin-top: 30px;
+	}
+
+	h3 {
+		color: $casv-blue;
+		font-style: normal;
 	}
 
 	h1, h2, h3, h4, h5 {
@@ -24,10 +35,19 @@
 		line-height: 28px;
 	}
 
+	.logo {
+		z-index: 1;
+	}
+
 	.page-header {
+
 
 		img {
 			width: 100%;
+		}
+
+		@media screen and (max-width: $lg-breakpoint){
+			margin-top: 150px;
 		}
 	}
 
@@ -37,28 +57,54 @@
 
 	.internal_content_wrapper {
 		clear: both;
+		display: inline-block;
 		margin: 0 auto;
 		min-height: 600px;
 		padding: 60px 0;
 		text-align: left;
+		width: 90%;
+
+		@media screen and (max-width: $lg-breakpoint){
+			width: 100%;
+		}
 
 		.content {
 			margin-top: 0px;
 		}
 
 		.sidebar_container {
-			color: $nh-blue;
+			color: $casv-blue;
 			float: left;
 			font-family: $base-font;
 			font-weight: 800;
-			padding-left: 3%;
-			position: relative;
-			width: 28%;
+			padding: 0 0 80px 5%;
+			//position: sticky;
+			//top: 200px;
+			width: 25%;
 
 			h2 {
+				font-size: 22px;
+				margin-top: 30px;
+				color: $casv-blue;
+			}
+
+			h3 {
+				color: $casv-red;
 				font-size: 20px;
-				margin-top: 10px;
-				color: $nh-blue;
+			}
+
+			p {
+				font-weight: normal;
+				line-height: 22px;
+			}
+
+			a {
+				color: $casv-blue;
+				font-style: italic;
+				font-size: 18px;
+				//line-height: 1.5em;
+				text-decoration: none;
+				text-transform: uppercase;
 			}
 
 			@media screen and (max-width: $lg-breakpoint){
@@ -67,27 +113,39 @@
 		  		width: 100%;
 			}
 
-			.quick-links-list {
-				font-size: 18px;
-				font-weight: 400;
-				line-height: 25px;
-				margin: 10px 0 0 10px;
+			.callout {
+				border: 1px solid $casv-red;
+				margin-top: 30px;
 
-				a {
-					text-decoration: none;
-					color: $black;
+				h3 {
+					color: $white;
+					background: $casv-red;
+					margin: 0;
+					padding: 5px;
+				}
 
-					&:hover {
-						color: $nh-blue;
-					}
-				}	
+				p {
+					padding: 10px;
+				}
 			}
 
-			.nav-dropdown {
+			.nav {
+				padding-top: 30px;
+				z-index: 2;
+
+				>li {
+					line-height: 1.6em;
+					margin-bottom: 5px;
+
+					a:hover {
+						color: $casv-red;
+					}
+				}
 
 				ul {
-					list-style-type: disc;
-					margin-left: 30px;
+					list-style-type: none;
+					margin: 0 0 10px 30px;
+					
 
 					@media screen and (max-width: $lg-breakpoint){
 						display: none;
@@ -98,31 +156,91 @@
 
 		.internal_content_container {
 			float: right;
-			border-left: $nh-blue 3px solid;
 			margin-bottom: 50px;
+			max-width: 900px;
 			min-height: 500px;
-			padding: 0 10% 60px 5%;
+			padding: 0 10% 60px 0;
 			position: relative;
 			width: 70%;
 
+			h1 {
+				font-size: 30px;
+				color: $casv-red;
+				font-weight: bold;
+				text-transform: none;
+				margin-top: 30px;
+			}
+
+			h2 {
+				font-size: 24px;
+				color: $casv-header-gray;
+			}
+
 			@media screen and (max-width: $lg-breakpoint){
 				border-left: 0;
-				border-bottom: $nh-blue 1px solid;
+				border-bottom: $casv-red 1px solid;
 				float: none;
-				padding: 0 30px;
+				padding: 0 10px;
 		  		width: 100%;
 			}
 
+			ul {
+				list-style-type: disc;
+				line-height: 22px;
+				margin: 0 0 40px 30px;
+			}
+
+			.field-cams {
+				display: flex;
+				flex-wrap: wrap;
+				list-style-type: none;
+
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+
 			i {
-				color: $nh-lt-blue;
+				color: $casv-red;
 				font-size: 1.5em;
 				margin-right: 5px;
+			}
+
+			.internal-pic-link {
+				position: relative;
+				text-align: center;
+
+				a {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					margin: 0 auto;
+					min-height: 210px;
+					max-width: 350px;
+					position: relative;
+					overflow: hidden;
+
+					span {
+						align-self: flex-start;
+						background: $casv-red;
+						border-bottom-left-radius: 10px;
+						border-bottom-right-radius: 10px;
+						color: $white;
+						display: block;
+						padding: 10px 20px;
+					}
+				}
+
+				img, span {
+					position: absolute;
+				}
 			}
 		}
 
 		.testimonial-box {
 			align-items: center;
-			background: $nh-blue;
+			background: $casv-red;
 			color: $white;
 			margin: 50px 0 0 50px;
 			max-height: 160px;
@@ -164,71 +282,37 @@
 			display: none;
 		}
 	}
-}
 
-.why-rhythm {
-	margin: 0 auto;
-	max-width: $content-max-width;
-	padding: 60px 0;
-	text-align: center;
+	.book-a-room {
+		>div {
+			text-align: center;
 
-	h1 {
-		margin-left: 130px;
-
-		@media screen and (max-width: $lg-breakpoint){
-			margin-left: 20px;
+			button {
+				margin: 15px auto;
+				min-width: 250px;
+			}
 		}
 	}
 
-	.content {
-		margin: 0 auto;
-		text-align: left;
-		width: 80%;
+	.ccm-block-page-list-title {
+		color: $casv-blue;
+		font-size: 1.2em;
+		margin-bottom: 10px;
+	}
 
-		ul {
-			li {
-				display: flex;
-				align-items: center;
+	button {
 
-				>div {
-					&:first-child {
-						display: flex;
-						justify-content: center;
-						min-width: 130px;
-
-					}
-				}
-			}
+		&.sabatini {
+			float: right;
+			margin-right: 50px;
 		}
+	}
 
-		/*div {
-
-			&:first-child {
-				display: flex;
-				float: left;
-				height: 130px;
-				justify-content: center;
-				width: 160px;
-
-				@media screen and (max-width: $lg-breakpoint){
-					float: none;
-				}
-
-				img {
-					align-self: center;
-				}
-			}
-
-			&:nth-child(2) {
-				margin-left: 162px;
-
-				@media screen and (max-width: $lg-breakpoint){
-					margin-left: 20px;
-				}
-			}
-		}*/
+	.ccm-image-slider-container {
+		margin-bottom: 30px;
 	}
 }
+
 
 
 

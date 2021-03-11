@@ -7,20 +7,22 @@ $blocks = $as->getTotalBlocksInArea();
 $displayThirdColumn = $blocks > 0 || $c->isEditMode();
 ?>
 
-<header>
+<header class="header">
+  <a name="top"></a>
     <div class="topbar">
       <div>
-        <cite>Limited Space for 2020 - Sign Up Today!</cite>
+        <cite class="limited-space">Limited Space for 2021 - Sign Up Today!</cite>
+        <a class="button blue" href="/resources">Book Now</a>
           <div>
-            <i class="far fa-phone"></i><a href="tel:8454348300">(845) 434-8300</a>
+            <i class="fa fa-phone"></i><a href="tel:18003276790">1-800-327-6790</a>
           </div>
         </div>
       <div>
         <div class="social">
-          <a href="/">Contact Us</a>
-          <a href="/">FAQs</a>
-          <a href="/"><i class="fa fa-facebook"></i></a>
-          <a href="/"><i class="fa fa-youtube"></i></a>
+          <a href="/contact-us">Contact Us</a>
+          <a href="/about-us/faq">FAQs</a>
+          <a href="https://www.facebook.com/CooperstownASV/" target="social"><i class="fa fa-facebook"></i></a>
+          <a href="https://www.youtube.com/user/CooperstownAllStar" target="social"><i class="fa fa-youtube"></i></a>
         </div>
       </div>
     </div>

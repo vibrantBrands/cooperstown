@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" type="text/css" href="<?php echo $view->getThemePath()?>/css/bootstrap-modified.css">
-     <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+     <link rel="stylesheet" type="text/css" href="<?php echo $view->getThemePath()?>/_css/lity.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $view->getThemePath()?>/_css/style.css">
     <?php echo $html->css($view->getStylesheet('main.less')) ?>
     <?php
